@@ -2,6 +2,7 @@
     "name": "lexusalex/composer-package",
     "description": "test project in composer",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Alexsey Shmelev",

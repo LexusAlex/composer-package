@@ -1,4 +1,4 @@
-FROM php:7.4-cli-alpine
+FROM php:8.0-cli-alpine
 
 RUN apk add --no-cache autoconf g++ make \
     && pecl install xdebug \
@@ -11,7 +11,6 @@ RUN apk add unzip
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer --quiet \
-    && rm -rf /root/.composer/cache
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer --quiet
 
 WORKDIR /composer-package

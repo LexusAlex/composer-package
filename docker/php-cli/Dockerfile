@@ -7,7 +7,9 @@ RUN apk add --no-cache autoconf g++ make \
 
 RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 
-RUN apk add unzip
+COPY ./php/conf.d /usr/local/etc/php/conf.d
+
+RUN apk add unzip git
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 

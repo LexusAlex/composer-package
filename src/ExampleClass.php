@@ -1,12 +1,25 @@
 <?php
+
 declare(strict_types=1);
 
-namespace lexusalex\package;
+namespace Package;
 
-class ExampleClass {
+final class ExampleClass
+{
+    public string $property;
 
-    public function exampleMethod(): string
+    public function __construct(string $property = 'test')
     {
-        return 'Hello';
+        $this->property = $property;
+    }
+
+    public function getProperty(): string
+    {
+        return $this->property;
+    }
+
+    public function setProperty(string $property): void
+    {
+        $this->property = $property;
     }
 }
